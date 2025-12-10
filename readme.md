@@ -20,6 +20,35 @@ Transactions are essential for maintaining correctness, especially when multiple
 
 ## What is ACID?
 
+The foundation of a transaction is the ACID principle.
+
+These four properties ensure that a data operation is safe, consistent, recoverable, and properly isolated.
+
+Atomicity
+
+All operations within a transaction must either be completed entirely or not executed at all.
+If the transaction is interrupted or an error occurs, all operations are rolled back.
+This guarantees that the transaction either fully succeeds or fully fails as a whole.
+
+Consistency
+
+Transactions must take the database from one valid state to another valid state.
+When the transaction completes, the database must remain consistent and follow all integrity rules.
+
+Isolation
+
+The effects of one transaction must be isolated from others.
+When multiple transactions execute simultaneously, each one should run as if it were alone.
+
+Example: If two operations (T1 and T2) target the same account at the same time, T2 must wait until T1 is fully completed to prevent inconsistent results.
+
+Durability
+
+Once a transaction is committed, the results become permanent.
+Even in the event of a crash or system failure, the committed data must remain intact.
+Durability ensures that once data is written, it cannot be undone by unexpected failures.
+
+
 ## Nodejs Transaction Simulator
 - How does "Transaction" work? (basic level)
 - SAVEPOINT (Nested Transactions)
